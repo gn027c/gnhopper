@@ -1,0 +1,27 @@
+messages:
+  prefix: "&e[gnhopper] &f"
+  no-permission: "&cBạn không có quyền thực hiện hành động này!"
+  reload: "&aĐã tải lại cấu hình thành công."
+  info:
+    header: "&6--- Thông tin Hopper ---"
+    location: "&7Vị trí: &f{world}, {x}, {y}, {z}"
+    tier: "&7Cấp độ: &f{tier}"
+    speed: "&7Tốc độ: &f{tick} ticks"
+    amount: "&7Số lượng: &f{amount}"
+    type: "&7Giới hạn loại: &f{type}"
+  error:
+    not-hopper: "&cKhối này không phải là hopper!"
+    config:
+      invalid-slots-item-frame: "&e[Cảnh báo Cấu hình] Chế độ ITEM_FRAME hỗ trợ tối đa 6 slot. Đang điều chỉnh {value} về 6."
+      invalid-slots-gui: "&c[Lỗi Cấu hình] Chế độ GUI hỗ trợ từ 1-54 slot. Đang điều chỉnh {value} về 9."
+  gui:
+    dashboard:
+      title: "Hopper Dashboard"
+      filter-button: "&b&lBỘ LỌC"
+      upgrade-button: "&e&lNÂNG CẤP"
+      status: "&7Trạng thái: {status}"
+    filter:
+      title: "Cấu hình Bộ lọc"
+      back-button: "&c&lQUAY LẠI"
+      allowed-slot: "&aSlot cho phép"
+      locked-slot: "&cSlot bị khóa (Yêu cầu Nâng cấp)"

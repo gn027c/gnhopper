@@ -1,0 +1,27 @@
+messages:
+  prefix: "&e[gnhopper] &f"
+  no-permission: "&cYou do not have permission to perform this action!"
+  reload: "&aConfiguration reloaded successfully."
+  info:
+    header: "&6--- Hopper Information ---"
+    location: "&7Location: &f{world}, {x}, {y}, {z}"
+    tier: "&7Tier: &f{tier}"
+    speed: "&7Speed: &f{tick} ticks"
+    amount: "&7Amount: &f{amount}"
+    type: "&7Type Limit: &f{type}"
+  error:
+    not-hopper: "&cThis block is not a hopper!"
+    config:
+      invalid-slots-item-frame: "&e[Config Warning] ITEM_FRAME mode supports max 6 slots. Adjusting {value} to 6."
+      invalid-slots-gui: "&c[Config Error] GUI mode supports 1-54 slots. Adjusting {value} to 9."
+  gui:
+    dashboard:
+      title: "Hopper Dashboard"
+      filter-button: "&b&lFILTER"
+      upgrade-button: "&e&lUPGRADE"
+      status: "&7Status: {status}"
+    filter:
+      title: "Filter Configuration"
+      back-button: "&c&lBACK"
+      allowed-slot: "&aAllowed Slot"
+      locked-slot: "&cLocked Slot (Upgrade Required)"

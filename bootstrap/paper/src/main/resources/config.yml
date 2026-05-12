@@ -1,0 +1,135 @@
+# ========================================
+#         gnhopper Configuration
+# ========================================
+
+settings:
+  # Default language (en or vi)
+  language: en
+  
+  # Filter Mode: ITEM_FRAME or GUI
+  filter-mode: ITEM_FRAME
+  # Default number of filter slots (used if tiers are disabled)
+  default-filter-slots: 1
+  
+  # Transfer Mode: How the plugin handles item transfers for Filter Hoppers.
+  # - AUTO:   Automatically detect the most suitable mode (RECOMMENDED)
+  # - TASK:   Plugin takes full control (Highest speed, higher conflict risk)
+  # - HYBRID: Event filters input + Task pushes output (Balanced)
+  # - EVENT:  Event-only, Vanilla handles transfers (Most stable, Vanilla speed)
+  transfer-mode: AUTO
+  
+  filter-actions:
+    # --- Input Filters ---
+    
+    # Block items being pushed in from other hoppers or containers (Droppers, etc.)
+    block-move-in: true
+    
+    # Block hopper from automatically picking up dropped items on the ground (Entity Items)
+    block-pickup: true
+    
+    # Block players from manually putting items into the hopper (Click, Shift+Click, Drag)
+    # Default: false (Allows players to put items in for testing or manual processing)
+    block-player-interact: false
+    
+    # --- Output Filters ---
+    
+    # Block items from leaving the hopper if they don't match the filter
+    # If set to true: Only items matching the filter will be pushed to the container below.
+    # If set to false: Every item inside the hopper can leave (filter only acts as an input block).
+    block-move-out: true
+    
+    # --- Sanity Check ---
+    
+    # Automatically eject items that don't match the filter if they somehow got inside (due to other plugins/admin commands)
+    # Default: false
+    eject-illegal-items: false
+
+# ========================================
+#    Hopper Speed (Vanilla Defaults)
+# ========================================
+hopper:
+  # Ticks between each transfer (Vanilla: 8)
+  transfer-tick: 8
+  # Amount of items per transfer (Vanilla: 1)
+  transfer-amount: 1
+  # Amount of unique types per transfer (Vanilla: 1)
+  type-of-transfer: 1
+
+# ========================================
+#    Performance Settings
+# ========================================
+performance:
+  # Hibernation Mode
+  # Reduces lag by stopping continuous checks on empty hoppers.
+  hibernation:
+    enabled: true
+    # How many failed transfer attempts (empty/full) before going to sleep?
+    fail-limit: 10
+    # When sleeping, how often should it check again? (unit: ticks)
+    check-interval: 100
+
+  # Concurrency Limits (Queue System)
+  # Helps spread the processing load if there are too many hoppers.
+  limits:
+    # Maximum number of hoppers processed per Chunk per tick. (-1 = unlimited)
+    max-per-chunk: -1
+    # Maximum number of hoppers processed per Server per tick. (-1 = unlimited)
+    max-per-server: -1
+
+# ========================================
+#    Tier System
+# ========================================
+tiers:
+  # Tier system is disabled by default. Enable to activate upgrades and recipes.
+  enabled: false
+  
+  list:
+    basic:
+      display-name: "&7Basic Hopper"
+      transfer-tick: auto
+      transfer-amount: auto
+      type-of-transfer: auto
+      filter-slots: 1
+      recipe:
+        enabled: false
+      cost:
+        enabled: false
+        value: 0
+        
+    silver:
+      display-name: "&fSilver Hopper"
+      transfer-tick: 4
+      transfer-amount: 16
+      type-of-transfer: 2
+      filter-slots: 5
+      recipe:
+        enabled: true
+        shape:
+          - "III"
+          - "IHI"
+          - "III"
+        ingredients:
+          I: IRON_INGOT
+          H: HOPPER
+      cost:
+        enabled: true
+        value: 5000
+        
+    gold:
+      display-name: "&eGold Hopper"
+      transfer-tick: 1
+      transfer-amount: 64
+      type-of-transfer: 0
+      filter-slots: 9
+      recipe:
+        enabled: true
+        shape:
+          - "GGG"
+          - "GHG"
+          - "GGG"
+        ingredients:
+          G: GOLD_INGOT
+          H: HOPPER
+      cost:
+        enabled: true
+        value: 20000
