@@ -1,7 +1,11 @@
 name: gnhopper
 version: 1.0.0
 main: com.gn027c.hopper.paper.gnhopper
-api-version: '1.13'
+api-version: '1.21'
 authors: [gn027c]
 description: Advanced Hopper Enhancement Plugin
-softdepend: [Vault]
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: false
